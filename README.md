@@ -1,7 +1,7 @@
 # NotePhish - Privnote Phishing Simulation
 
 ---
-![Screenshot 2024-10-06 191539](https://github.com/user-attachments/assets/bee9ffb2-3baa-40ab-b6aa-04086340a6bd)
+![Screenshot 2024-10-06 191539](https://github.com/user-attachments/assets/86ea9c15-da8f-4386-991f-86b80a09b1f9)
 
 ---
 
