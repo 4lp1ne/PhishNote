@@ -1,9 +1,8 @@
-
-# NotePhisher - Privnote Phishing Simulation
+# NotePhish - Privnote Phishing Simulation
 
 ## Overview
 
-**NotePhisher** is a Privnote-style phishing project created for educational purposes and ethical hacking demonstrations. It simulates a phishing attack using social engineering techniques. The project displays a professional-looking note (similar to Privnote) that self-destructs once accessed by the user. When the note is accessed, the client-side geolocation, public IP address, and browser information are captured and sent to the server for logging.
+**NotePhish** is a Privnote-style phishing project created for educational purposes and ethical hacking demonstrations. It simulates a phishing attack using social engineering techniques. The project displays a professional-looking note (similar to Privnote) that self-destructs once accessed by the user. When the note is accessed, the client-side geolocation, public IP address, and browser information are captured and sent to the server for logging.
 
 **Note**: This project is for **ethical purposes only** and should be used with proper authorization.
 
@@ -21,7 +20,7 @@
 ## Project Structure
 
 ```
-NotePhisher/
+NotePhish/
 ├── node_modules/
 ├── public/
 │   └── (static assets such as JS/CSS for the front-end)
@@ -58,8 +57,8 @@ NotePhisher/
 
 1. **Clone the repository**:
    ```bash
-   git clone https://github.com/4lp1ne/NotePhisher.git
-   cd NotePhisher
+   git clone https://github.com/4lp1ne/NotePhish.git
+   cd NotePhish
    ```
 
 2. **Install dependencies**:
@@ -79,7 +78,7 @@ NotePhisher/
 
 ## Making It Public with Localtonet
 
-To expose your local NotePhisher instance to the public, you can use [localtonet](https://localtonet.com/):
+To expose your local **NotePhish** instance to the public, you can use [localtonet](https://localtonet.com/):
 
 1. Install Localtonet on your machine:
    ```bash
@@ -110,8 +109,6 @@ To expose your local NotePhisher instance to the public, you can use [localtonet
 ## License
 
 This project is licensed under the ISC License. Use it responsibly and ethically.
-
----
 
 By using this project, you agree to use it only in legal and authorized settings for educational or ethical hacking purposes.
 
