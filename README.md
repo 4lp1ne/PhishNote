@@ -80,6 +80,20 @@ NotePhish/
 4. **Access the app**: 
    Open a browser and navigate to `http://localhost:3000` to interact with the note interface.
 
+**output**:
+'''
+{
+  timestamp: "xxxx-xx-xxTxx:xx:xx.xxxZ",
+  publicIP: "xxx.xx.xxx.xx",
+  latitude: "xx.xxxxxxxxxxxxxxx",
+  longitude: "x.xxxxxxxxxxxxxxx",
+  browserInfo: {
+    userAgent: "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+    platform: "xxxxxxxxxxxx",
+    language: "xx-XX"
+  }
+}
+'''
 ---
 
 ## Making It Public with Localtonet
