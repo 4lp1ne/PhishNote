@@ -95,8 +95,12 @@ NotePhish/
    ```bash
    npm start
    ```
+   or
+   ```bash
+   node server.js
+   ```
 
-4. **Access the app**: 
+5. **Access the app**: 
    Open a browser and navigate to `http://localhost:3000` to interact with the note interface.
 
 ---
