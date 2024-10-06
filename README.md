@@ -1,5 +1,4 @@
 # NotePhish 
-## Privnote Phishing Simulation
 
 ---
 
