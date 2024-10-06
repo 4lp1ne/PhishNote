@@ -58,7 +58,7 @@ NotePhisher/
 
 1. **Clone the repository**:
    ```bash
-   git clone https://github.com/yourusername/NotePhisher.git
+   git clone https://github.com/4lp1ne/NotePhisher.git
    cd NotePhisher
    ```
 
