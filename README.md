@@ -81,7 +81,8 @@ NotePhish/
    Open a browser and navigate to `http://localhost:3000` to interact with the note interface.
 
 **output**:
-'''
+
+'''bash
 {
   timestamp: "xxxx-xx-xxTxx:xx:xx.xxxZ",
   publicIP: "xxx.xx.xxx.xx",
@@ -94,6 +95,7 @@ NotePhish/
   }
 }
 '''
+
 ---
 
 ## Making It Public with Localtonet
