@@ -115,4 +115,3 @@ This project is licensed under the ISC License. Use it responsibly and ethically
 
 By using this project, you agree to use it only in legal and authorized settings for educational or ethical hacking purposes.
 
----
