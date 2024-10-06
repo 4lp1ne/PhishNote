@@ -1,4 +1,3 @@
----
 
 # NotePhisher - Privnote Phishing Simulation
 
