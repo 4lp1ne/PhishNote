@@ -83,7 +83,6 @@ NotePhish/
 
 5. **Output**:
    ```bash 
-   {
   timestamp: "xxxx-xx-xxTxx:xx:xx.xxxZ",
   publicIP: "xxx.xx.xxx.xx",
   latitude: "xx.xxxxxxxxxxxxxxx",
@@ -92,8 +91,6 @@ NotePhish/
     userAgent: "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
     platform: "xxxxxxxxxxxx",
     language: "xx-XX"
-  }
-}
    ```
 
 ---
