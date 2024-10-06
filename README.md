@@ -80,10 +80,10 @@ NotePhish/
 4. **Access the app**: 
    Open a browser and navigate to `http://localhost:3000` to interact with the note interface.
 
-**output**:
 
-'''bash
-{
+5. **Output**:
+   ```bash 
+   {
   timestamp: "xxxx-xx-xxTxx:xx:xx.xxxZ",
   publicIP: "xxx.xx.xxx.xx",
   latitude: "xx.xxxxxxxxxxxxxxx",
@@ -94,7 +94,7 @@ NotePhish/
     language: "xx-XX"
   }
 }
-'''
+   ```
 
 ---
 
