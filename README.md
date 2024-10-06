@@ -1,3 +1,6 @@
+<img width="936" alt="image" src="https://github.com/user-attachments/assets/792cb155-961f-47de-b8c9-48de9d02d347">
+
+
 # NotePhish - Privnote Phishing Simulation
 
 ## Overview
