@@ -158,6 +158,9 @@ NotePhish/
 
 You can use the provided **run.bat** script to start the servers and access the phishing note pages. The script will ask you which server(s) you want to run.
 
+   ```bash
+   ./run.bat
+   ```
 ### Options:
 
 1. **Option A**: Runs only **Server 1** (for geolocation, IP, and browser info logging).
