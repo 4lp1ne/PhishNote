@@ -152,22 +152,35 @@ NotePhish/
    npm install
    ```
 
-3. **Start the servers**:
+---
 
-   - Start server 1 (Geolocation and logging):
-     ```bash
-     node server1.js
-     ```
+## Running the Project with `run.bat`
 
-   - Start server 2 (Camera capture):
-     ```bash
-     node server2.js
-     ```
+You can use the provided **run.bat** script to start the servers and access the phishing note pages. The script will ask you which server(s) you want to run.
 
-4. **Access the app**: 
-   Open a browser and navigate to:
-   - `http://localhost:3000` for the geolocation and logging simulation.
-   - `http://localhost:3001` for the camera capture simulation.
+### Options:
+
+1. **Option A**: Runs only **Server 1** (for geolocation, IP, and browser info logging).
+2. **Option B**: Runs only **Server 2** (for camera capture).
+3. **Option C**: Runs **both Server 1 and Server 2** (for geolocation, IP logging, and camera capture).
+
+### How to Run:
+
+1. **Double-click the `run.bat` script** to start the project.
+2. **Choose an option**:
+   - Enter **A** to run only the geolocation logging.
+   - Enter **B** to run only the camera capture.
+   - Enter **C** to run both servers.
+
+3. **Access the app**:
+   - The script will automatically open the browser for the selected servers:
+     - For **Server 1** (Geolocation and logging): `http://localhost:3000`
+     - For **Server 2** (Camera capture): `http://localhost:3001`
+
+4. **Logs and Images**:
+   - The collected data (logs and camera captures) are saved in the `public/uploads` directory:
+     - **Geolocation logs** are saved in `log.txt`.
+     - **Captured images** are saved in `.png` format.
 
 ---
 
@@ -210,7 +223,9 @@ MIT License
 Copyright (c) 2024 4lp1ne
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
+of this software and associated documentation files (the
+
+ "Software"), to deal
 in the Software without restriction, including without limitation the rights
 to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
 copies of the Software, and to permit persons to whom the Software is
