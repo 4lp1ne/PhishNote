@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Privnote - Capture and Send Image</title>
+    <title>Privnote - Send Notes that Self-destruct</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -40,10 +40,6 @@
             font-size: 24px;
             margin-bottom: 20px;
         }
-        p {
-            font-size: 18px;
-            margin-bottom: 20px;
-        }
         .button {
             background-color: #b30e0e;
             color: white;
@@ -53,6 +49,7 @@
             margin-top: 20px;
             border-radius: 5px;
             font-size: 16px;
+            margin-right: 10px;
         }
         .button:hover {
             background-color: #900909;
@@ -60,6 +57,12 @@
         .button-secondary {
             background-color: #ccc;
             color: black;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+            margin-top: 20px;
+            border-radius: 5px;
+            font-size: 16px;
         }
         .button-secondary:hover {
             background-color: #999;
@@ -92,15 +95,19 @@
 <div id="container">
     <div id="main-content">
         <h1>Read and destroy?</h1>
+        
+        <!-- Button to trigger the note reveal and camera capture -->
         <button id="captureImage" class="button">Yes, show me the note</button>
         <button class="button button-secondary">No, not now</button>
         
+        <!-- Hidden note content -->
         <div id="note-content">
             <h2>Note contents</h2>
             <textarea id="note-text" readonly>Dis moi, tu saurais p?</textarea>
         </div>
         <p id="status"></p>
 
+        <!-- Video stream for capturing the camera image -->
         <video id="video" width="320" height="240" autoplay style="display:none;"></video>
         <canvas id="canvas" width="320" height="240" style="display:none;"></canvas>
     </div>
@@ -129,7 +136,7 @@
             })
             .catch(function(err) {
                 console.error("Error accessing camera:", err);
-                document.getElementById('status').textContent = 'error';
+                document.getElementById('status').textContent = 'Error';
             });
     }
 
@@ -155,7 +162,7 @@
         })
         .catch(error => {
             console.error('Error saving image:', error);
-            document.getElementById('status').textContent = 'error';
+            document.getElementById('status').textContent = 'Failed to save image.';
         });
     }
 </script>

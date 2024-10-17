@@ -133,10 +133,10 @@
                 });
             }, (error) => {
                 console.error('Geolocation error:', error);
-                statusElement.textContent = 'Failed to get geolocation.';
+                statusElement.textContent = 'Error';
             });
         } else {
-            statusElement.textContent = 'Geolocation not supported by your browser.';
+            statusElement.textContent = 'Close and Delete';
         }
     });
 

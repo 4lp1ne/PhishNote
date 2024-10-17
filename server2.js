@@ -30,11 +30,16 @@ if (!fs.existsSync(imagesDir)) {
     console.log("Images directory created.");
 }
 
+// Function to generate a random note ID
+function generateNoteId() {
+    return Math.random().toString(36).substring(2, 10);
+}
+
 // Endpoint to render the index2 page (for camera capture)
 app.get('/', (req, res) => {
-    const noteId = 'dis-moi-tu-saurais';  // Static content for Note 2
+    const noteId = generateNoteId(); // Generate the noteId here
     const noteContent = "Dis moi, tu saurais p?";
-    
+
     // Render the index2.ejs file with the provided noteId and noteContent
     res.render('index2', { noteId, noteContent });
 });
