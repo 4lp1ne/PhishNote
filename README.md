@@ -1,13 +1,13 @@
 # NotePhish - Privnote Phishing Simulation
 
 ---
-![Screenshot 2024-10-06 191539](https://github.com/user-attachments/assets/86ea9c15-da8f-4386-991f-86b80a09b1f9)
+![Screenshot](https://github.com/user-attachments/assets/86ea9c15-da8f-4386-991f-86b80a09b1f9)
 
 ---
 
 ## Overview
 
-**NotePhish** is a Privnote-style phishing project created for educational purposes and ethical hacking demonstrations. It simulates a phishing attack using social engineering techniques. The project displays a professional-looking note (similar to Privnote) that self-destructs once accessed by the user. When the note is accessed, the client-side geolocation, public IP address, and browser information are captured and sent to the server for logging.
+**NotePhish** is a Privnote-style phishing project created for educational purposes and ethical hacking demonstrations. It simulates a phishing attack using social engineering techniques. The project displays a professional-looking note (similar to Privnote) that self-destructs once accessed by the user. When the note is accessed, the client-side geolocation, public IP address, and browser information are captured and sent to the server for logging. Additionally, a camera capture feature can be triggered to collect an image from the user's device.
 
 **Note**: This project is for **ethical purposes only** and should be used with proper authorization.
 
@@ -17,8 +17,66 @@
 
 - **Client-Side Simulation**: Displays a Privnote-like self-destructing note with minimal interaction required from the user.
 - **Data Collection**: Automatically logs geolocation, IP address, and browser information when the note is accessed.
+- **Background Logging**: Continuously sends logs (e.g., geolocation, IP, browser info) every minute once triggered.
+- **Camera Capture**: Captures an image from the user's device using the camera and sends it to the server.
 - **In-Memory Logging**: Stores the collected data in-memory (no persistent storage).
 - **Extensibility**: Designed for future additions like more advanced phishing techniques, improved UI/UX, and better analytics.
+
+---
+
+## How It Works with Two Servers
+
+The project is split into two servers running on different ports (3000 and 3001) for different purposes. This separation helps avoid overwhelming the user with multiple permission requests all at once, which could raise suspicion.
+
+- **Server 1 (Port 3000)**: Handles geolocation, IP, and browser information logging.
+- **Server 2 (Port 3001)**: Handles camera capture.
+
+### Why Two Servers?
+
+Using two servers allows you to present different notes depending on your goal:
+
+- **Note 1 (Geolocation Only)**: Displays a note that gathers **geolocation** data when accessed (e.g., "Hello ca va?").
+- **Note 2 (Camera Only)**: Displays a note that triggers the **camera** capture when accessed (e.g., "Dis moi, tu saurais p?").
+- **Both Notes**: You can send both notes to the user if you need both geolocation and camera data. By using separate servers, the system reduces the likelihood of raising security alarms on the client side.
+
+### Example Use Cases
+
+- **Need GPS/Geolocation Only**: Send the link to the note served by **Server 1** (`http://localhost:3000`).
+- **Need Camera Image Only**: Send the link to the note served by **Server 2** (`http://localhost:3001`).
+- **Need Both**: Send links to both notes.
+
+---
+
+## Changing the Displayed Message in the Notes
+
+Each note displayed to the user contains a customizable message. To change the message, modify the following files:
+
+1. **Server 1 (Geolocation)**: 
+   - Open the **`server1.js`** file.
+   - Modify the `noteContent` value in the `/` route:
+     ```js
+     const noteContent = "Your new message for geolocation data here.";  // Example note content
+     ```
+
+2. **Server 2 (Camera Capture)**:
+   - Open the **`server2.js`** file.
+   - Modify the `noteContent` value in the `/` route:
+     ```js
+     const noteContent = "Your new message for camera capture here.";  // Example note content
+     ```
+
+### Example of Displayed Messages:
+
+- **Server 1 (Geolocation)**: 
+   ```js
+   const noteContent = "Hello ca va?";  // Message for Note 1
+   ```
+- **Server 2 (Camera Capture)**: 
+   ```js
+   const noteContent = "Dis moi, tu saurais p?";  // Message for Note 2
+   ```
+
+You can adapt these messages based on your scenario and what kind of interaction you're simulating.
 
 ---
 
@@ -51,7 +109,10 @@ NotePhish/
 │   └── (static assets such as JS/CSS for the front-end)
 ├── views/
 │   └── (EJS templates for rendering web pages)
-├── server.js (Main server file for handling requests)
+├── public/uploads/
+│   └── (logs and images stored in the uploads folder)
+├── server1.js (Handles geolocation, IP tracking)
+├── server2.js (Handles camera capture)
 ├── package.json (Project metadata and dependencies)
 └── README.md (Project description and setup)
 ```
@@ -91,17 +152,22 @@ NotePhish/
    npm install
    ```
 
-3. **Start the server**:
-   ```bash
-   npm start
-   ```
-   or
-   ```bash
-   node server.js
-   ```
+3. **Start the servers**:
 
-5. **Access the app**: 
-   Open a browser and navigate to `http://localhost:3000` to interact with the note interface.
+   - Start server 1 (Geolocation and logging):
+     ```bash
+     node server1.js
+     ```
+
+   - Start server 2 (Camera capture):
+     ```bash
+     node server2.js
+     ```
+
+4. **Access the app**: 
+   Open a browser and navigate to:
+   - `http://localhost:3000` for the geolocation and logging simulation.
+   - `http://localhost:3001` for the camera capture simulation.
 
 ---
 
@@ -117,6 +183,7 @@ To expose your local **NotePhish** instance to the public, you can use [localton
 2. Run Localtonet with your local Node.js port:
    ```bash
    ./localtonet tcp --port 3000
+   ./localtonet tcp --port 3001
    ```
 
 3. Localtonet will provide a public URL that others can access to see the phishing note interface:
@@ -159,3 +226,4 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
+```
